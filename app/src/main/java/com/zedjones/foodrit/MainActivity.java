@@ -12,15 +12,21 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+
 
 public class MainActivity extends AppCompatActivity
-        implements ConnectionCallbacks, OnConnectionFailedListener{
+        implements ConnectionCallbacks, OnConnectionFailedListener,
+        com.google.android.gms.location.LocationListener {
 
     public static final String EXTRA_MESSAGE = "com.zedjones.foodrit";
     private GoogleApiClient mapsClient;
     private Location mLastLocation;
-
+    private LocationRequest mLocationRequest;
+    private LocationSettingsRequest mSettingsRequest;
+    private String test = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,17 @@ public class MainActivity extends AppCompatActivity
                     .addOnConnectionFailedListener(this)
                     .addApi(LocationServices.API)
                     .build();
+
+        }
+
+        if(mLocationRequest == null){
+            mLocationRequest = LocationRequest.create()
+                    .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                    .setInterval(10*1000)
+                    .setFastestInterval(1000);
+        }
+
+        if(mSettingsRequest == null){
 
         }
 
@@ -57,18 +74,33 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //TODO figure out why I still can't get location
+    @Override
     public void onConnected(Bundle connectionHint){
         try{
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mapsClient);
         }
         catch(SecurityException sec){
-
+            test = "Security Exception";
         }
-        if(mLastLocation != null){
+        if(mLastLocation == null){
+            try{
+                LocationServices.FusedLocationApi.
+                        requestLocationUpdates(mapsClient, mLocationRequest, this);
+            }
+            catch(SecurityException sec){
+
+            }
 
         }
     }
 
+    @Override
+    public void onLocationChanged(Location location){
+        mLastLocation = location;
+    }
+
+    @Override
     public void onConnectionSuspended(int reason){
 
     }
@@ -82,7 +114,12 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra(EXTRA_MESSAGE, String.valueOf(mLastLocation.getLatitude()));
         }
         else{
-            intent.putExtra(EXTRA_MESSAGE, message);
+            if(test == null){
+                intent.putExtra(EXTRA_MESSAGE, message);
+            }
+            else{
+                intent.putExtra(EXTRA_MESSAGE, test);
+            }
         }
         startActivity(intent);
     }
