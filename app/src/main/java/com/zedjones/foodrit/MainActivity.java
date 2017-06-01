@@ -1,10 +1,13 @@
 package com.zedjones.foodrit;
 
 import android.content.Intent;
+import android.content.IntentSender;
 import android.location.Location;
 import android.location.LocationListener;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -12,9 +15,15 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResult;
+import com.google.android.gms.location.LocationSettingsStates;
+import com.google.android.gms.location.LocationSettingsStatusCodes;
 
 
 public class MainActivity extends AppCompatActivity
@@ -25,11 +34,12 @@ public class MainActivity extends AppCompatActivity
     private GoogleApiClient mapsClient;
     private Location mLastLocation;
     private LocationRequest mLocationRequest;
-    private LocationSettingsRequest mSettingsRequest;
     private String test = null;
+    final static int REQUEST_LOCATION_TIME = 199;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("App Status", "created");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -40,7 +50,7 @@ public class MainActivity extends AppCompatActivity
                     .addOnConnectionFailedListener(this)
                     .addApi(LocationServices.API)
                     .build();
-
+            Log.d("GoogleApiClient", "created");
         }
 
         if(mLocationRequest == null){
@@ -50,16 +60,50 @@ public class MainActivity extends AppCompatActivity
                     .setFastestInterval(1000);
         }
 
-        if(mSettingsRequest == null){
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
+                .addLocationRequest(mLocationRequest);
 
-        }
+        builder.setAlwaysShow(true);
+
+        PendingResult<LocationSettingsResult> result = LocationServices.SettingsApi
+                .checkLocationSettings(mapsClient, builder.build());
+
+        result.setResultCallback(new ResultCallback<LocationSettingsResult>() {
+            @Override
+            public void onResult(@NonNull LocationSettingsResult result) {
+                final Status status = result.getStatus();
+                final LocationSettingsStates states = result.getLocationSettingsStates();
+                switch(status.getStatusCode()){
+                    case LocationSettingsStatusCodes.SUCCESS:
+                        break;
+
+                    case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
+                        try{
+                            status.startResolutionForResult(
+                                    MainActivity.this,
+                                    REQUEST_LOCATION_TIME);
+                        }
+                        catch(IntentSender.SendIntentException sie){
+
+                        }
+                        break;
+
+                    case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+                        break;
+                }
+
+            }
+        });
+
 
        // Location currentLocation =
     }
 
     //connects to the Google Play API and calls the onStart of Activity
     public void onStart(){
+        Log.d("App Status", "started");
         mapsClient.connect();
+        Log.d("GoogleApiClient", "connected");
         super.onStart();
     }
 
@@ -71,7 +115,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onConnectionFailed(ConnectionResult result){
-
+        Log.d("Connection failed:", result.getErrorMessage());
     }
 
     //TODO figure out why I still can't get location
@@ -79,12 +123,15 @@ public class MainActivity extends AppCompatActivity
     public void onConnected(Bundle connectionHint){
         try{
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mapsClient);
+            Log.d("Location requests", "first try");
         }
         catch(SecurityException sec){
+            Log.d("Location requests", "security exception");
             test = "Security Exception";
         }
         if(mLastLocation == null){
             try{
+                Log.d("Location requests", "started");
                 LocationServices.FusedLocationApi.
                         requestLocationUpdates(mapsClient, mLocationRequest, this);
             }
@@ -98,6 +145,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onLocationChanged(Location location){
         mLastLocation = location;
+        Log.d("Location changed", location.toString());
+        LocationServices.FusedLocationApi.removeLocationUpdates(mapsClient, this);
     }
 
     @Override
@@ -109,11 +158,11 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText2);
         String message = editText.getText().toString();
-        System.out.println("Message");
         if(mLastLocation != null){
             intent.putExtra(EXTRA_MESSAGE, String.valueOf(mLastLocation.getLatitude()));
         }
         else{
+            Log.d("mLastLocation", "null");
             if(test == null){
                 intent.putExtra(EXTRA_MESSAGE, message);
             }
