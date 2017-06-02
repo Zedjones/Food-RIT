@@ -25,6 +25,14 @@ import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 
 public class MainActivity extends AppCompatActivity
         implements ConnectionCallbacks, OnConnectionFailedListener,
@@ -34,6 +42,7 @@ public class MainActivity extends AppCompatActivity
     private GoogleApiClient mapsClient;
     private Location mLastLocation;
     private LocationRequest mLocationRequest;
+    private HashMap<Coordinate, Float> distancesTo;
     private String test = null;
     final static int REQUEST_LOCATION_TIME = 199;
 
@@ -95,8 +104,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        distancesTo = new HashMap<>();
 
-       // Location currentLocation =
     }
 
     //connects to the Google Play API and calls the onStart of Activity
@@ -138,7 +147,6 @@ public class MainActivity extends AppCompatActivity
             catch(SecurityException sec){
 
             }
-
         }
     }
 
@@ -158,8 +166,12 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText2);
         String message = editText.getText().toString();
+        float[] results = new float[5];
         if(mLastLocation != null){
-            intent.putExtra(EXTRA_MESSAGE, String.valueOf(mLastLocation.getLatitude()));
+            Location.distanceBetween(mLastLocation.getLatitude(),
+                    mLastLocation.getLongitude(), 43.086290, -77.670557, results);
+            intent.putExtra(EXTRA_MESSAGE, getRoadDistance(new Coordinate(mLastLocation.getLatitude(),
+                    mLastLocation.getLongitude()), new Coordinate(43.086290, -77.670557)));
         }
         else{
             Log.d("mLastLocation", "null");
@@ -171,5 +183,17 @@ public class MainActivity extends AppCompatActivity
             }
         }
         startActivity(intent);
+    }
+
+    public String getRoadDistance(final Coordinate start, final Coordinate dest){
+        MapsThread mapsThread = new MapsThread(start, dest);
+        mapsThread.start();
+        try{
+            mapsThread.join();
+        }
+        catch(InterruptedException ie){
+            Log.d("InterruptedException", ie.getMessage());
+        }
+        return mapsThread.getDistance();
     }
 }
