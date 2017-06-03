@@ -25,13 +25,7 @@ import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity
@@ -185,7 +179,7 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public String getRoadDistance(final Coordinate start, final Coordinate dest){
+    public String getRoadDistance(Coordinate start, Coordinate dest){
         MapsThread mapsThread = new MapsThread(start, dest);
         mapsThread.start();
         try{
