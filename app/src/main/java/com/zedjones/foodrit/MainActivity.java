@@ -3,7 +3,6 @@ package com.zedjones.foodrit;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.location.Location;
-import android.location.LocationListener;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,9 +21,9 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
-import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity
     private Location mLastLocation;
     private LocationRequest mLocationRequest;
     private HashMap<Coordinate, Float> distancesTo;
+    private ArrayList<DiningLocation> locations;
     private String test = null;
     final static int REQUEST_LOCATION_TIME = 199;
 
@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onResult(@NonNull LocationSettingsResult result) {
                 final Status status = result.getStatus();
-                final LocationSettingsStates states = result.getLocationSettingsStates();
                 switch(status.getStatusCode()){
                     case LocationSettingsStatusCodes.SUCCESS:
                         break;
