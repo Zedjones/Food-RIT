@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
     private LocationRequest mLocationRequest;
     private HashMap<Coordinate, Float> distancesTo;
     private ArrayList<DiningLocation> locations;
+    private FoodParser parser;
     private String test = null;
     final static int REQUEST_LOCATION_TIME = 199;
 
@@ -98,6 +99,10 @@ public class MainActivity extends AppCompatActivity
         });
 
         distancesTo = new HashMap<>();
+        locations = new ArrayList<>();
+        parser = new FoodParser(locations,
+                "https://www.rit.edu/fa/diningservices/hours-and-locations");
+        parser.start();
 
     }
 
