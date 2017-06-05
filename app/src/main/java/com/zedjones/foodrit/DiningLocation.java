@@ -32,4 +32,16 @@ public class DiningLocation {
     public boolean isOpen(){
         return isOpen;
     }
+
+    public String toString(){
+        String returned = name + ", " + location + ", " + times + ", ";
+        if(isOpen){
+            returned += "Open";
+        }
+        else{
+            returned += "Closed";
+        }
+        return returned;
+
+    }
 }
