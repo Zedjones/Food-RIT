@@ -28,7 +28,7 @@ public class MapsThread extends Thread{
     }
     @Override
     public void run() {
-        String response = new String();
+        String response = "";
         try{
             URL url = new URL("http://maps.googleapis.com/maps/api/directions/json?origin="
                     + start.getLatitude() + "," + start.getLongitude() + "&destination=" +

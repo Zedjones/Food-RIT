@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     private ArrayList<DiningLocation> locations;
     private FoodParser parser;
     private String test = null;
+    private boolean firstLaunch = true;
     final static int REQUEST_LOCATION_TIME = 199;
 
     @Override
@@ -100,10 +101,22 @@ public class MainActivity extends AppCompatActivity
 
         distancesTo = new HashMap<>();
         locations = new ArrayList<>();
-        parser = new FoodParser(locations,
-                "https://www.rit.edu/fa/diningservices/hours-and-locations");
-        parser.start();
-
+        if(firstLaunch){
+            parser = new FoodParser(locations,
+                    "https://www.rit.edu/fa/diningservices/hours-and-locations");
+            parser.start();
+            try{
+                parser.join();
+            }
+            catch(InterruptedException ie){
+                Log.d("Exception", ie.getMessage());
+            }
+            for(DiningLocation location : locations){
+                if(mLastLocation != null){
+                    // getRoadDistance()
+                }
+            }
+        }
     }
 
     //connects to the Google Play API and calls the onStart of Activity
@@ -125,7 +138,6 @@ public class MainActivity extends AppCompatActivity
         Log.d("Connection failed:", result.getErrorMessage());
     }
 
-    //TODO figure out why I still can't get location
     @Override
     public void onConnected(Bundle connectionHint){
         try{
