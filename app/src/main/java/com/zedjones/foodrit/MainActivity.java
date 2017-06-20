@@ -24,6 +24,7 @@ import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity
             catch(InterruptedException ie){
                 Log.d("Exception", ie.getMessage());
             }
+            Collections.sort(locations, new LocationComparator());
             for(DiningLocation location : locations){
                 if(mLastLocation != null){
                     // getRoadDistance()
