@@ -41,28 +41,47 @@ public class FoodParser extends Thread{
                     }
                     Elements locationTimes = elem.getElementsByAttributeValue("data-th", "Hours");
                     if(!locationLoc.isEmpty()){
+                        int index = 0;
                         for(Element locElem : locationTimes){
+                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
+                            Elements locationTimesClosed = locElem.getElementsByClass("menu-day-open");
+                            if(!locationTimesOpen.isEmpty()){
+                                if(!locationTimesClosed.isEmpty()){
+                                    for(int loc = 0; loc < locationTimesClosed.size(); loc++){
+                                        if(loc == 0){
+                                            locationTimesOpen.add(1, locationTimesClosed.get(loc));
+                                        }
+                                        else{
+                                            int insertAt = locationTimesOpen.indexOf(locationTimesClosed.get(loc-1));
+                                            locationTimesOpen.add(insertAt, locationTimesClosed.get(loc));
+                                        }
+                                    }
+                                }
+                                index = locationTimesOpen.size()-1;
+                                for(int i = 0; i < locationTimesOpen.size(); i++){
+                                    Element current = locationTimesOpen.get(i);
+                                    String open = current.text();
+                                    if(open.contains("Open") || open.contains("open")){
+                                        isOpen = true;
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                            }
                             Elements locationTimesTime = locElem.getElementsByClass("menu-day-hours");
                             if(!locationTimesTime.isEmpty()){
-                                times = locationTimesTime.first().text();
+                                Element current = locationTimesTime.get(index);
+                                times = current.text();
                                 String[] temp = times.split(" ", 2);
                                 times = temp[1];
-                            }
-                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
-                            if(!locationTimesOpen.isEmpty()){
-                                String open = locationTimesOpen.first().text();
-                                if(open.contains("Open") || open.contains("open")){
-                                    isOpen = true;
-                                }
-                                else{
-                                    isOpen = false;
-                                }
                             }
                         }
                     }
                     Log.d("Location name", name);
                     Log.d("Location located", location);
-                    Log.d("Location times", times);
+                    if(times != null){
+                        Log.d("Location times", times);
+                    }
                     Log.d("Location open", Boolean.toString(isOpen));
                     DiningLocation tempLoc = new DiningLocation(name, location, times, isOpen);
                     locations.add(tempLoc);
@@ -83,22 +102,39 @@ public class FoodParser extends Thread{
                     }
                     Elements locationTimes = elem.getElementsByAttributeValue("data-th", "Hours");
                     if(!locationLoc.isEmpty()){
+                        int index = 0;
                         for(Element locElem : locationTimes){
+                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
+                            Elements locationTimesClosed = locElem.getElementsByClass("menu-day-open");
+                            if(!locationTimesOpen.isEmpty()){
+                                if(!locationTimesClosed.isEmpty()){
+                                    for(int loc = 0; loc < locationTimesClosed.size(); loc++){
+                                        if(loc == 0){
+                                            locationTimesOpen.add(1, locationTimesClosed.get(loc));
+                                        }
+                                        else{
+                                            int insertAt = locationTimesOpen.indexOf(locationTimesClosed.get(loc-1));
+                                            locationTimesOpen.add(insertAt, locationTimesClosed.get(loc));
+                                        }
+                                    }
+                                }
+                                index = locationTimesOpen.size()-1;
+                                for(int i = 0; i < locationTimesOpen.size(); i++){
+                                    Element current = locationTimesOpen.get(i);
+                                    String open = current.text();
+                                    if(open.contains("Open") || open.contains("open")){
+                                        isOpen = true;
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                            }
                             Elements locationTimesTime = locElem.getElementsByClass("menu-day-hours");
                             if(!locationTimesTime.isEmpty()){
-                                times = locationTimesTime.first().text();
+                                Element current = locationTimesTime.get(index);
+                                times = current.text();
                                 String[] temp = times.split(" ", 2);
                                 times = temp[1];
-                            }
-                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
-                            if(!locationTimesOpen.isEmpty()){
-                                String open = locationTimesOpen.first().text();
-                                if(open.contains("Open") || open.contains("open")){
-                                    isOpen = true;
-                                }
-                                else{
-                                    isOpen = false;
-                                }
                             }
                         }
                     }
@@ -127,22 +163,39 @@ public class FoodParser extends Thread{
                     }
                     Elements locationTimes = elem.getElementsByAttributeValue("data-th", "Hours");
                     if(!locationLoc.isEmpty()){
+                        int index = 0;
                         for(Element locElem : locationTimes){
+                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
+                            Elements locationTimesClosed = locElem.getElementsByClass("menu-day-open");
+                            if(!locationTimesOpen.isEmpty()){
+                                if(!locationTimesClosed.isEmpty()){
+                                    for(int loc = 0; loc < locationTimesClosed.size(); loc++){
+                                        if(loc == 0){
+                                            locationTimesOpen.add(1, locationTimesClosed.get(loc));
+                                        }
+                                        else{
+                                            int insertAt = locationTimesOpen.indexOf(locationTimesClosed.get(loc-1));
+                                            locationTimesOpen.add(insertAt, locationTimesClosed.get(loc));
+                                        }
+                                    }
+                                }
+                                index = locationTimesOpen.size()-1;
+                                for(int i = 0; i < locationTimesOpen.size(); i++){
+                                    Element current = locationTimesOpen.get(i);
+                                    String open = current.text();
+                                    if(open.contains("Open") || open.contains("open")){
+                                        isOpen = true;
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                            }
                             Elements locationTimesTime = locElem.getElementsByClass("menu-day-hours");
                             if(!locationTimesTime.isEmpty()){
-                                times = locationTimesTime.first().text();
+                                Element current = locationTimesTime.get(index);
+                                times = current.text();
                                 String[] temp = times.split(" ", 2);
                                 times = temp[1];
-                            }
-                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
-                            if(!locationTimesOpen.isEmpty()){
-                                String open = locationTimesOpen.first().text();
-                                if(open.contains("Open") || open.contains("open")){
-                                    isOpen = true;
-                                }
-                                else{
-                                    isOpen = false;
-                                }
                             }
                         }
                     }
@@ -171,22 +224,39 @@ public class FoodParser extends Thread{
                     }
                     Elements locationTimes = elem.getElementsByAttributeValue("data-th", "Hours");
                     if(!locationLoc.isEmpty()){
+                        int index = 0;
                         for(Element locElem : locationTimes){
+                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
+                            Elements locationTimesClosed = locElem.getElementsByClass("menu-day-open");
+                            if(!locationTimesOpen.isEmpty()){
+                                if(!locationTimesClosed.isEmpty()){
+                                    for(int loc = 0; loc < locationTimesClosed.size(); loc++){
+                                        if(loc == 0){
+                                            locationTimesOpen.add(1, locationTimesClosed.get(loc));
+                                        }
+                                        else{
+                                            int insertAt = locationTimesOpen.indexOf(locationTimesClosed.get(loc-1));
+                                            locationTimesOpen.add(insertAt, locationTimesClosed.get(loc));
+                                        }
+                                    }
+                                }
+                                index = locationTimesOpen.size()-1;
+                                for(int i = 0; i < locationTimesOpen.size(); i++){
+                                    Element current = locationTimesOpen.get(i);
+                                    String open = current.text();
+                                    if(open.contains("Open") || open.contains("open")){
+                                        isOpen = true;
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                            }
                             Elements locationTimesTime = locElem.getElementsByClass("menu-day-hours");
                             if(!locationTimesTime.isEmpty()){
-                                times = locationTimesTime.first().text();
+                                Element current = locationTimesTime.get(index);
+                                times = current.text();
                                 String[] temp = times.split(" ", 2);
                                 times = temp[1];
-                            }
-                            Elements locationTimesOpen = locElem.getElementsByClass("menu-day-closed");
-                            if(!locationTimesOpen.isEmpty()){
-                                String open = locationTimesOpen.first().text();
-                                if(open.contains("Open") || open.contains("open")){
-                                    isOpen = true;
-                                }
-                                else{
-                                    isOpen = false;
-                                }
                             }
                         }
                     }
@@ -201,7 +271,8 @@ public class FoodParser extends Thread{
                 }
             }
             catch(Exception e){
-                Log.d("Exception caught", e.getMessage());
+                Log.d("Exception caught", e.getMessage() +
+                        " Line " + e.getStackTrace()[1].getLineNumber());
             }
         }
         catch(Exception e){

@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity
                 Log.d("Exception", ie.getMessage());
             }
             Collections.sort(locations, new LocationComparator());
+            System.out.println(locations);
             for(DiningLocation location : locations){
                 if(mLastLocation != null){
                     // getRoadDistance()
