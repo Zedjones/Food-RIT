@@ -8,6 +8,7 @@ public class DiningLocation {
     private String name;
     private String times;
     private String location;
+    private String distance;
     private boolean isOpen;
 
     public DiningLocation(String name, String location, String times, boolean isOpen){
@@ -31,6 +32,14 @@ public class DiningLocation {
 
     public boolean isOpen(){
         return isOpen;
+    }
+
+    public String getDistance(){
+        return distance;
+    }
+
+    public void setDistance(String distance){
+        this.distance = distance;
     }
 
     public String toString(){

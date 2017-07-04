@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/layout-v11/notification_media_cancel_action.xml"
+    }
+]

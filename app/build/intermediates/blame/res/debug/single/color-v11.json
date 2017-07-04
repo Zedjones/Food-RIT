@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    }
+]

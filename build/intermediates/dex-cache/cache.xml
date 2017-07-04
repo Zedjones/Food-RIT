@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_eb1eb0b4265af66c0a86f5fa5896174147e977ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="24d4ebb9af372db206f4deec35f1df43d3f3b296">
+        <dex dex="/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_83b10526dbb15dc724e6f5f5ec9fb408fe78efd2/classes.dex" />
+    </item>
+
+</items>

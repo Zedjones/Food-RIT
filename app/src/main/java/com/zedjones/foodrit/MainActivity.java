@@ -113,12 +113,28 @@ public class MainActivity extends AppCompatActivity
                 Log.d("Exception", ie.getMessage());
             }
             Collections.sort(locations, new LocationComparator());
-            System.out.println(locations);
             for(DiningLocation location : locations){
-                if(mLastLocation != null){
-                    // getRoadDistance()
-                }
+                System.out.println(location);
             }
+            Thread getDistanceThread = new Thread(new Runnable() {
+            @Override
+                public void run(){
+                    try{
+                        while(mLastLocation == null){
+                            Thread.sleep(500);
+                        }
+                        for(DiningLocation location : locations){
+                            location.setDistance(getRoadDistanceString(new Coordinate(mLastLocation.getLatitude(),
+                                    mLastLocation.getLongitude()), location.getLocation()));
+                        }
+                    }
+                    catch(InterruptedException ie){
+                        Log.d("Interrupted Exception", ie.getMessage());
+                    }
+
+            }
+            });
+            getDistanceThread.start();
         }
     }
 
@@ -200,6 +216,18 @@ public class MainActivity extends AppCompatActivity
 
     public String getRoadDistance(Coordinate start, Coordinate dest){
         MapsThread mapsThread = new MapsThread(start, dest);
+        mapsThread.start();
+        try{
+            mapsThread.join();
+        }
+        catch(InterruptedException ie){
+            Log.d("InterruptedException", ie.getMessage());
+        }
+        return mapsThread.getDistance();
+    }
+
+    public String getRoadDistanceString(Coordinate start, String dest){
+        MapsThreadString mapsThread = new MapsThreadString(start, dest);
         mapsThread.start();
         try{
             mapsThread.join();

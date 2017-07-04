@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/drawable-ldrtl-mdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    }
+]

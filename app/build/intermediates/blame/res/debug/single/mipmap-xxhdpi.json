@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
+        "source": "/home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    }
+]

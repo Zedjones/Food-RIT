@@ -1,0 +1,145 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:2:1-29:12
+	package
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:5:5-78
+	android:name
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:6:22-78
+application
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:8:5-27:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/zedjones/.android/build-cache/1e6c6736ac2c2340ddb7a939355a132e385e106c/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/zedjones/.android/build-cache/eb1c47bc643354dacabc81c1a71ac148ee939474/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zedjones/.android/build-cache/61d43bda70e30381e26e9d4163995da300358202/output/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-location:10.2.6] /home/zedjones/.android/build-cache/f54a39dbdb68904d9ad317af589973f16abd267c/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.6] /home/zedjones/.android/build-cache/6d947201c472ac222cc83cbda96f67bcb0cf5ad2/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] /home/zedjones/.android/build-cache/4c8cf8a6be0fc414bdb0e21c612774a33f8db98f/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] /home/zedjones/.android/build-cache/bc864ab1a4fffe8f5e8328c3f1c64483d6d94c25/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.1] /home/zedjones/.android/build-cache/e5de3009cd0b0bd4d95c6b7a12759a18ab9e87c0/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zedjones/.android/build-cache/7dd6ebfc4afd19ef94b1aa2a08697e85abcf9c01/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zedjones/.android/build-cache/2813ef2170dd49e313bffa02594deb8c02397ef9/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zedjones/.android/build-cache/54e4852f288b9c0d8e3da41df2315b8395a8b27d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zedjones/.android/build-cache/43038afe7423237e0013c1b08a8547ace87ab646/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/zedjones/.android/build-cache/eadb5f9bfd9127fd8089f814ee475f534f2a9259/output/AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:11:9-41
+	android:supportsRtl
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:13:9-35
+	android:roundIcon
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:12:9-54
+	android:allowBackup
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:9:9-35
+	android:icon
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:10:9-43
+	android:theme
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:14:9-40
+activity#com.zedjones.foodrit.MainActivity
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:15:9-21:20
+	android:name
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:15:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:19:27-74
+activity#com.zedjones.foodrit.DisplayMessageActivity
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:22:9-26:20
+	android:parentActivityName
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:23:13-55
+	android:name
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:22:19-57
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:24:13-25:49
+	android:value
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:25:17-46
+	android:name
+		ADDED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml:24:24-70
+uses-sdk
+INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/zedjones/.android/build-cache/1e6c6736ac2c2340ddb7a939355a132e385e106c/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/zedjones/.android/build-cache/eb1c47bc643354dacabc81c1a71ac148ee939474/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zedjones/.android/build-cache/61d43bda70e30381e26e9d4163995da300358202/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-location:10.2.6] /home/zedjones/.android/build-cache/f54a39dbdb68904d9ad317af589973f16abd267c/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.6] /home/zedjones/.android/build-cache/6d947201c472ac222cc83cbda96f67bcb0cf5ad2/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] /home/zedjones/.android/build-cache/4c8cf8a6be0fc414bdb0e21c612774a33f8db98f/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] /home/zedjones/.android/build-cache/bc864ab1a4fffe8f5e8328c3f1c64483d6d94c25/output/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.1] /home/zedjones/.android/build-cache/e5de3009cd0b0bd4d95c6b7a12759a18ab9e87c0/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zedjones/.android/build-cache/7dd6ebfc4afd19ef94b1aa2a08697e85abcf9c01/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zedjones/.android/build-cache/2813ef2170dd49e313bffa02594deb8c02397ef9/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zedjones/.android/build-cache/54e4852f288b9c0d8e3da41df2315b8395a8b27d/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zedjones/.android/build-cache/43038afe7423237e0013c1b08a8547ace87ab646/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /home/zedjones/.android/build-cache/eadb5f9bfd9127fd8089f814ee475f534f2a9259/output/AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+		INJECTED from /home/zedjones/AndroidStudioProjects/Food@RIT/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] /home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/zedjones/.android/build-cache/1e6c6736ac2c2340ddb7a939355a132e385e106c/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/zedjones/.android/build-cache/eb1c47bc643354dacabc81c1a71ac148ee939474/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] /home/zedjones/.android/build-cache/e5de3009cd0b0bd4d95c6b7a12759a18ab9e87c0/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/zedjones/.android/build-cache/7dd6ebfc4afd19ef94b1aa2a08697e85abcf9c01/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/zedjones/.android/build-cache/2813ef2170dd49e313bffa02594deb8c02397ef9/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/zedjones/.android/build-cache/54e4852f288b9c0d8e3da41df2315b8395a8b27d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/zedjones/.android/build-cache/43038afe7423237e0013c1b08a8547ace87ab646/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/zedjones/.android/build-cache/eadb5f9bfd9127fd8089f814ee475f534f2a9259/output/AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /home/zedjones/.android/build-cache/686485e2ff13da3320e53c2979c98e6edd74242d/output/AndroidManifest.xml:26:9-47
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:19:22-76
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:20:22-64
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:10.2.6] /home/zedjones/.android/build-cache/a7f6ed7031f68f28739df2d10da4215a14e39a0c/output/AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.2.6] /home/zedjones/.android/build-cache/6d947201c472ac222cc83cbda96f67bcb0cf5ad2/output/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] /home/zedjones/.android/build-cache/6d947201c472ac222cc83cbda96f67bcb0cf5ad2/output/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] /home/zedjones/.android/build-cache/6d947201c472ac222cc83cbda96f67bcb0cf5ad2/output/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] /home/zedjones/.android/build-cache/6d947201c472ac222cc83cbda96f67bcb0cf5ad2/output/AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:10.2.6] /home/zedjones/.android/build-cache/bc864ab1a4fffe8f5e8328c3f1c64483d6d94c25/output/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:10.2.6] /home/zedjones/.android/build-cache/bc864ab1a4fffe8f5e8328c3f1c64483d6d94c25/output/AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:10.2.6] /home/zedjones/.android/build-cache/bc864ab1a4fffe8f5e8328c3f1c64483d6d94c25/output/AndroidManifest.xml:20:20-65
