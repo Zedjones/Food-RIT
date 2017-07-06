@@ -113,19 +113,35 @@ public class MainActivity extends AppCompatActivity
                 Log.d("Exception", ie.getMessage());
             }
             Collections.sort(locations, new LocationComparator());
-            for(DiningLocation location : locations){
-                System.out.println(location);
-            }
-            Thread getDistanceThread = new Thread(new Runnable() {
+            final Thread getDistanceThread = new Thread(new Runnable() {
             @Override
                 public void run(){
                     try{
                         while(mLastLocation == null){
                             Thread.sleep(500);
                         }
+                        ArrayList<MapsThreadString> locationThreads = new ArrayList<>();
                         for(DiningLocation location : locations){
-                            location.setDistance(getRoadDistanceString(new Coordinate(mLastLocation.getLatitude(),
-                                    mLastLocation.getLongitude()), location.getLocation()));
+                            //TODO Make it so that this is using threading and that these all run at once
+                            MapsThreadString current = new MapsThreadString(new Coordinate(mLastLocation.getLatitude(),
+                                    mLastLocation.getLongitude()), location.getLocation());
+                            current.start();
+                            locationThreads.add(current);
+                        }
+                        while(true){
+                            boolean anyAlive = false;
+                            for(MapsThreadString currentThread : locationThreads){
+                                if(currentThread.isAlive()){
+                                    anyAlive = true;
+                                }
+                            }
+                            if(!anyAlive){
+                                break;
+                            }
+                        }
+                        for(int i = 0; i < locations.size(); i++){
+                            System.out.println(locationThreads.get(i).getDistance());
+                            locations.get(i).setDistance(locationThreads.get(i).getDistance());
                         }
                     }
                     catch(InterruptedException ie){
@@ -135,6 +151,23 @@ public class MainActivity extends AppCompatActivity
             }
             });
             getDistanceThread.start();
+            Thread printThread = new Thread(new Runnable() {
+                public void run(){
+                    try{
+                        while(getDistanceThread.isAlive()){
+                            Thread.sleep(200);
+                        }
+                        for(DiningLocation location : locations){
+                            System.out.println(location);
+                            System.out.println(location.getDistance());
+                        }
+                    }
+                    catch(InterruptedException ie){
+                        Log.d("Interrupted Exception", ie.getMessage());
+                    }
+                }
+            });
+            printThread.start();
         }
     }
 
